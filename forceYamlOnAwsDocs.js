@@ -11,11 +11,15 @@
 
 (function() {
     'use strict';
-    const dropDowns = document.querySelectorAll('[id^="trigger-content-"]');
-    const codeSelector = dropDowns[1];
-    codeSelector.innerHTML = "YAML";
-    const jsonCode = document.querySelectorAll('#JSON.section.langfilter');
-    jsonCode.forEach(element => {
-        element.style.display = 'none';
-    });
+
+    function modifyDOM() {
+        const dropDowns = document.querySelectorAll('[id^="trigger-content-"]');
+        const codeSelector = dropDowns[1];
+        codeSelector.innerHTML = "YAML";
+        const jsonCode = document.querySelectorAll('#JSON.section.langfilter');
+        jsonCode.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+   document.addEventListener('DOMContentLoaded', modifyDOM());
 })();
